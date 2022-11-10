@@ -8,7 +8,7 @@ export const userLogin = createAsyncThunk(
     async (loginData)=>{
         const response = await axios({
             method: "post",
-            url : `http://localhost:5000/api/users/login/`,
+            url : `https://lubies-mern-blog.herokuapp.com/api/users/login/`,
             data : loginData
         })
         const data = await response.data;
@@ -22,7 +22,7 @@ export const userLogin = createAsyncThunk(
 export const userLogout = createAsyncThunk(
     'userLogout',
     async ()=>{
-        const response =await "Logged Out"
+        const response = await "Logged Out"
         console.log(response)
         return response
     }
@@ -34,7 +34,7 @@ export const userSignUp = createAsyncThunk(
     async (signUpData) => {
         const response = await axios({
             method: "post",
-            url:`http://localhost:5000/api/users/signup/`,
+            url:`https://lubies-mern-blog.herokuapp.com/api/users/signup/`,
             data: signUpData
         })
         const data = await response.data
