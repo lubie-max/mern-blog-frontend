@@ -12,13 +12,11 @@ const BlogDetails = () => {
   const data = useSelector((state) => state.posts.posts)
   const dispatch = useDispatch()
 
-  useEffect(() => {
 
-    return () => {
-      dispatch(viewOne(id))
-    
-    }
+  useEffect(() => {
+    dispatch(viewOne(id))
   }, [id])
+
   const itemData = data.post
   console.log(id, itemData)
  
