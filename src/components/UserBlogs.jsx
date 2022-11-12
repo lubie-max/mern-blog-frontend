@@ -15,7 +15,7 @@ const UserBlogs = () => {
 
   useEffect(() => {
     dispatch(getPostsOfUser())
-  },[dispatch])
+  })
 
   //edit 
   const handleEdit = (e, id) => {

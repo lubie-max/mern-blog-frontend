@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { deletePost, getPosts , viewOne } from '../StateManagement/Slices/postSlice';
+import {  getPosts  } from '../StateManagement/Slices/postSlice';
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,7 @@ const Blogs = () => {
 
   useEffect(() => {
     dispatch(getPosts())
-  }, [dispatch])
+  })
 
   //edit 
   const handleEdit = (e, id) => {

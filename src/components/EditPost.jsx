@@ -9,7 +9,9 @@ import Spinner from 'react-bootstrap/Spinner' ;
 
 const EditPost = () => {
   
-  const {id} = useParams()
+  // const {id} = useParams()
+  const id = localStorage.getItem('postId')
+
   const item = useSelector((state)=> state.posts.posts)
   const itemData= item.post
 
@@ -19,13 +21,10 @@ console.log("data",item.post)
   const navigate = useNavigate()
 
 const dispatch = useDispatch()
-useEffect(() => {
 
-  return () => {
-    dispatch(viewOne(id))
-  
-  }
-}, [dispatch])
+useEffect(() => {
+  dispatch(viewOne(id))
+}, [id])
 
 
 

@@ -7,15 +7,15 @@ import { viewOne } from '../StateManagement/Slices/postSlice';
 
 
 const BlogDetails = () => {
-  // const {id} = useParams()
-  const id = localStorage.getItem('postId')
+  const {id} = useParams()
+  // const id = localStorage.getItem('postId')
   const data = useSelector((state) => state.posts.posts)
   const dispatch = useDispatch()
 
 
   useEffect(() => {
     dispatch(viewOne(id))
-  }, [id])
+  }, [dispatch])
 
   const itemData = data.post
   console.log(id, itemData)
@@ -25,7 +25,7 @@ const BlogDetails = () => {
     <>
      <div className="mx-auto my-2" style={{display:'flex' , justifyContent:'center' }}>
 
-      { data.post ? (<>
+      { itemData? (<>
       <div style={{margin:'20px', width:"60%" }}>
         <Card >
         <Card.Img variant="top" src={itemData.image} />
