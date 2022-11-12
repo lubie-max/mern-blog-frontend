@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, getPostsOfUser } from '../StateManagement/Slices/postSlice';
@@ -15,7 +15,7 @@ const UserBlogs = () => {
 
   useEffect(() => {
     dispatch(getPostsOfUser())
-  })
+  },[dispatch])
 
   //edit 
   const handleEdit = (e, id) => {
@@ -49,12 +49,15 @@ const UserBlogs = () => {
                   <Card.Img onClick={(e)=> details(e, item._id)} variant="top" src={item.image} style={{ height: '15rem' }} />
                   <Card.Body>
                     <Card.Text>
-                      <h3>
+                      <h2>
                         {item.title.substring(0, 20)}
-                      </h3>
+                      </h2>
                     </Card.Text>
                     <Card.Text>
+                      <p>
+
                       {item.content.substring(0, 50)}  ...
+                      </p>
                     </Card.Text>
 
                     <div className="mb-0 mt-0 py-0">
