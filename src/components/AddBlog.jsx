@@ -3,13 +3,13 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { addPost } from '../StateManagement/Slices/postSlice';
 import Alert from 'react-bootstrap/Alert';
 
 const AddBlog = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const actionCompleted = useSelector((state) => state.posts.isLoading)
   console.log(">>", actionCompleted)
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)

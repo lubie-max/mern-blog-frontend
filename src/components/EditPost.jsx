@@ -25,7 +25,7 @@ useEffect(() => {
     dispatch(viewOne(id))
   
   }
-}, [id])
+}, [dispatch])
 
 
 

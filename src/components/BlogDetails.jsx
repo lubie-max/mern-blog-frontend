@@ -10,9 +10,7 @@ const BlogDetails = () => {
   const {id} = useParams()
   // const id = localStorage.getItem('postId')
   const data = useSelector((state) => state.posts.posts)
-  const itemData = data.post
   const dispatch = useDispatch()
-  console.log(id, itemData)
 
   useEffect(() => {
 
@@ -21,6 +19,8 @@ const BlogDetails = () => {
     
     }
   }, [id])
+  const itemData = data.post
+  console.log(id, itemData)
  
 
 
@@ -29,7 +29,7 @@ const BlogDetails = () => {
     <>
      <div className="mx-auto my-2" style={{display:'flex' , justifyContent:'center' }}>
 
-      {itemData ? (<>
+      { itemData ? (<>
       <div style={{margin:'20px', width:"60%" }}>
         <Card >
         <Card.Img variant="top" src={itemData.image} />
