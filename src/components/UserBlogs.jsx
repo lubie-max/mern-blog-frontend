@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { deletePost, getPostsOfUser } from '../StateManagement/Slices/postSlice';
+import { deletePost, getPostsOfUser, viewOne } from '../StateManagement/Slices/postSlice';
 import Button from 'react-bootstrap/Button';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ const UserBlogs = () => {
   //edit 
   const handleEdit = (e, id) => {
     console.log('handle edit >>', id)
+    dispatch(viewOne(id))
     navigate(`/edit-blog/${id}`)
   }
 

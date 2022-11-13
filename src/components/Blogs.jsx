@@ -22,7 +22,7 @@ const Blogs = () => {
 
   useEffect(() => {
     dispatch(getPosts())
-  })
+  }, [dispatch || navigate])
 
   //edit 
   const handleEdit = (e, id) => {
