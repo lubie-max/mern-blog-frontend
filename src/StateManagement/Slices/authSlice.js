@@ -3,12 +3,13 @@ import axios from 'axios'
 
 // api calls
 //login
+// https://geeksblog-backend.onrender.com 
 export const userLogin = createAsyncThunk(
     'userLogin',
     async (loginData)=>{
         const response = await axios({
             method: "post",
-            url : `https://lubies-mern-blog.herokuapp.com/api/users/login/`,
+            url : `https://geeksblog-backend.onrender.com/api/users/login/`,
             data : loginData
         })
         const data = await response.data;
@@ -34,7 +35,7 @@ export const userSignUp = createAsyncThunk(
     async (signUpData) => {
         const response = await axios({
             method: "post",
-            url:`https://lubies-mern-blog.herokuapp.com/api/users/signup/`,
+            url:`https://geeksblog-backend.onrender.com/api/users/signup/`,
             data: signUpData
         })
         const data = await response.data

@@ -5,7 +5,7 @@ import axios from "axios"
 export const getPosts = createAsyncThunk(
     'getPosts',
     async () => {
-        const response = await axios.get(`https://lubies-mern-blog.herokuapp.com/api/blogs/`);
+        const response = await axios.get(`https://geeksblog-backend.onrender.com/api/blogs/`);
         const data = await response.data
         console.log(data)
         console.log(localStorage.userId)
@@ -17,7 +17,7 @@ export const getPosts = createAsyncThunk(
 export const getPostsOfUser = createAsyncThunk(
     'userPosts',
     async () => {
-        const response = await axios.get(`https://lubies-mern-blog.herokuapp.com/api/blogs/user/${localStorage.userId}/`)
+        const response = await axios.get(`https://geeksblog-backend.onrender.com/api/blogs/user/${localStorage.userId}/`)
         const data = await response.data
         return data.blogs.blogs
     }
@@ -30,7 +30,7 @@ export const addPost = createAsyncThunk(
         const response = await axios(
             {
                 method: 'post',
-                url: `https://lubies-mern-blog.herokuapp.com/api/blogs/new-blog/`,
+                url: `https://geeksblog-backend.onrender.com/api/blogs/new-blog/`,
                 data: postData
             })
 
@@ -44,7 +44,7 @@ export const addPost = createAsyncThunk(
 export const deletePost = createAsyncThunk(
     'deltePost',
     async (id) => {
-        const response = await axios.delete(`https://lubies-mern-blog.herokuapp.com/api/blogs/delete/${id}/`)
+        const response = await axios.delete(`https://geeksblog-backend.onrender.com/api/blogs/delete/${id}/`)
         const data = await response.data
         console.log(data)
         return data
@@ -57,7 +57,7 @@ export const updatePost = createAsyncThunk(
     'updatePost',
     async (postData ) => {
         
-        const response = await axios.put(`https://lubies-mern-blog.herokuapp.com/api/blogs/update/${localStorage.postId}`,postData )
+        const response = await axios.put(`https://geeksblog-backend.onrender.com/api/blogs/update/${localStorage.postId}`,postData )
         const data = await response.data
         console.log("updated data", data)
         return data
@@ -68,7 +68,7 @@ export const updatePost = createAsyncThunk(
 
 export const viewOne = createAsyncThunk('viewOne',
     async (id) => {
-        const response = await axios.get(`https://lubies-mern-blog.herokuapp.com/api/blogs/${id}`)
+        const response = await axios.get(`https://geeksblog-backend.onrender.com/api/blogs/${id}`)
         const data = await response.data
         console.log(">>>>>>data>>", data)
         localStorage.setItem('postId', data.post._id)
